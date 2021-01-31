@@ -94,15 +94,13 @@ public class PolicyService {
                         sumaTotal = ret.getValorPolizaEmpresa() + coberturaSaludUnHijo;
                         copagoTrabajador = calculaCopagoTrabajador.apply(sumaTotal, company_percentage);
                         copago.setCopago(copagoTrabajador);
-                        //listaCopagoPorTrabajador.add(copago);
                         copago.setNroWorker(listaCopagoPorTrabajador.size()-1);
-                        //ret.setValorPolizaEmpresa(sumaTotal);
+                        ret.setValorPolizaEmpresa(sumaTotal);
                     } else if (validacionNinos.test(individualWorker)) {
 
                         sumaTotal = ret.getValorPolizaEmpresa() + coberturaSaludDosOMasHijo;
                         copagoTrabajador = calculaCopagoTrabajador.apply(sumaTotal, company_percentage);
                         copago.setCopago(copagoTrabajador);
-                        //listaCopagoPorTrabajador.add(copago);
                         copago.setNroWorker(listaCopagoPorTrabajador.size()-1);
                         ret.setValorPolizaEmpresa(sumaTotal);
                     }
